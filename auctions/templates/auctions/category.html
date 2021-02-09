@@ -1,0 +1,12 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+<h2>Active listings for {{ category.name }}</h2>
+{% for listing in category.listings %}
+    <h4>{{listing.title}}</h4>
+    <p>{{listing.description}}</p>
+    <h6>Bid: ${{listing.bid.price}}</h6>
+    <img src="{{listing.imgURL}}", width=100px>
+    {{listing.user.username}}
+{% endfor %}
+{% endblock %}
